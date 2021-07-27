@@ -1,0 +1,17 @@
+on boot
+	write  /sys/kernel/fast_charge/force_fast_charge 1
+
+	#Maximum USB_DCP USB_HVDCP and USB_HVDCP3 currents
+	write  /sys/module/qpnp_smbcharger/parameters/default_dcp_icl_ma 2500
+	write  /sys/module/qpnp_smbcharger/parameters/default_hvdcp_icl_ma 2500
+	write  /sys/module/qpnp_smbcharger/parameters/default_hvdcp3_icl_ma 2500
+	write  /sys/module/dwc3_msm/parameters/hvdcp_max_current 1500
+	write  /sys/module/dwc3_msm/parameters/dcp_max_current 1500
+
+	#USB Phy settings
+	write  /sys/module/phy_msm_usb/parameters/dcp_max_current 1400
+	write  /sys/module/phy_msm_usb/parameters/hvdcp_max_current 1300
+
+	#Quick Charge 3.0 Specific settings:
+	write  /sys/class/power_supply/battery/constant_charge_current_max 1300000
+	
