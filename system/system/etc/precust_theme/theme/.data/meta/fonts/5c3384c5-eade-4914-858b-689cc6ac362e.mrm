@@ -1,0 +1,52 @@
+{
+  "localId": "5c3384c5-eade-4914-858b-689cc6ac362e",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "f8c11fad0785dc9e4cf972feebbbf25d51771011",
+  "platform": 3,
+  "size": 201952,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Digital Sans Now"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "3c497e35-ef79-49ce-8371-545dd8d656c9",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

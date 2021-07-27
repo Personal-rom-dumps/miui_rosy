@@ -1,0 +1,52 @@
+{
+  "localId": "c287bc9e-16a2-4488-8bd0-a0aedd8fea9f",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "019706b037f92d105af35fe3aabb1124e7ac4d3f",
+  "platform": 3,
+  "size": 201613,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Akrobat"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [],
+  "subResources": [
+    {
+      "localId": "830cebcb-cc90-4428-a399-6fd651b4c0a0",
+      "resourceCode": "fonts",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

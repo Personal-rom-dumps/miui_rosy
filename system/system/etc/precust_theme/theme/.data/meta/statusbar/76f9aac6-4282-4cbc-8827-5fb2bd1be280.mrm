@@ -1,0 +1,51 @@
+{
+  "localId": "76f9aac6-4282-4cbc-8827-5fb2bd1be280",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "1b880f5783ed8864a222c774aa9590b96ec7be66",
+  "platform": 12,
+  "size": 135525,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "Masik"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Rounded"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "en_US": [
+      "en_US_statusbar_1.jpg"
+    ]
+  },
+  "builtInPreviews": {
+    "en_US": [
+      "en_US_statusbar_1.jpg"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "3b90a079-8eda-4c2f-9b28-d24a1dbbeb65",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

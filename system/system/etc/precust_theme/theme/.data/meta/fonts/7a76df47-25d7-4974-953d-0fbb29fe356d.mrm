@@ -1,0 +1,52 @@
+{
+  "localId": "7a76df47-25d7-4974-953d-0fbb29fe356d",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "5f5af31802b6fef8961dec894b4c4482c98a474b",
+  "platform": 3,
+  "size": 164236,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Blogger Sans"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "ebbed55d-6c34-4e5d-922a-0514a1fcd980",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

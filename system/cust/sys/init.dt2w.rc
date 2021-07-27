@@ -1,0 +1,3 @@
+#DT2W Configs
+on property:sys.boot_completed=1
+write /sys/kernel/touchpanel/dclicknode 1

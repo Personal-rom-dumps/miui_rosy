@@ -1,0 +1,52 @@
+{
+  "localId": "1a15f4c9-8b3c-47d0-9698-08d7d88daab2",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "e02ca930bb2e09b6a8abae331574fde7a1c11fad",
+  "platform": 1,
+  "size": 252920,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Core Mellow"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_big_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_big_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "00feee9d-c682-49bb-acb8-62a51935db08",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

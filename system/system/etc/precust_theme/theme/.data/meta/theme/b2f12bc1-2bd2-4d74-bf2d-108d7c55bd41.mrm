@@ -1,0 +1,52 @@
+{
+  "localId": "b2f12bc1-2bd2-4d74-bf2d-108d7c55bd41",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "07481daba79ba72441b3bb865eadaa071e2b3db6",
+  "platform": 3,
+  "size": 242553,
+  "updatedTime": 0,
+  "version": "1",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MIUI"
+  },
+  "titles": {
+    "fallback": "Arista Pro"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [],
+  "subResources": [
+    {
+      "localId": "69a700c2-613f-4b06-a16f-9a1d26e9b613",
+      "resourceCode": "fonts",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

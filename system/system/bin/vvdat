@@ -1,0 +1,121 @@
+#!/system/bin/sh
+
+start_vvdat () {
+cd /sdcard/Reborn/dat;
+echo " Konversi dat.br ke dat..."
+if [ -f /sdcard/Reborn/dat/vendor.new.dat.br ]; then
+   brotli -d vendor.new.dat.br;
+  else
+    echo " vendor.new.dat.br tidak ditemukan, copy vendor.new.dat.br dari zip ROM dahulu";
+  fi;
+}
+
+start_pdat () {
+cd /sdcard/Reborn/dat;
+echo " Konversi dat ke img..."
+if [ -f /sdcard/Reborn/dat/vendor.new.dat ]; then
+   vdat2img vendor.transfer.list vendor.new.dat vendor.img;
+  else
+    echo " vendor.new.dat tidak ditemukan, copy vendor.new.dat dari zip ROM dahulu";
+  fi;
+if [ -f /sdcard/Reborn/dat/vendor.new.dat ]; then
+    rm -rf vendor.new.dat.br;
+    rm -rf vendor.new.dat;
+    rm -rf vendor.transfer.list;
+  else
+    echo " "
+fi;
+}
+
+###########################
+if [ -d /sdcard/Reborn/dat ]; then
+   echo "";
+  else
+   mkdir -p /sdcard/Reborn/dat;
+fi;
+
+busybox clear
+busybox sleep 1
+busybox echo ""
+busybox echo -e " \e[01;31m ========  DANCOK IKI  ========"
+busybox echo ""
+busybox echo "________________________________________"
+busybox echo ""
+busybox echo " Petunjuk : Buat folder dengan nama dat di /sdcard/Reborn"
+busybox echo "            folder akan otomatis ada, jika tidak buat sendiri."
+busybox echo "            copy file vendor.new.dat.br & vendor.transfer.list ,"
+busybox echo "            ke folder Reborn/dat."
+busybox echo ""
+busybox echo ""
+busybox echo "________________________________________"
+busybox echo ""
+busybox echo "1. Start Convert"
+busybox echo "2. Hapus semua"
+busybox echo "3. Keluar"
+busybox echo ""
+busybox echo -e " \e[01;31m ============== REBORN TEAM ============="
+busybox echo -n "Masukkan pilihan angka dan enter [1-3]:   "  
+read character
+case $character in 
+
+
+1) busybox clear;
+start_vvdat
+busybox echo ""
+start_pdat
+busybox echo ""
+busybox echo -n " Pergi kembali ke menu?
+[ Ya = 1 | Tidak = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+	busybox echo ""
+	busybox echo " Keluar dari menu. "
+	busybox sleep 1
+	exit
+else
+	busybox echo ""
+  R
+	busybox sleep 1
+fi
+busybox clear ;;
+
+R) busybox clear;
+R
+sleep 1
+busybox echo "";;
+
+2) busybox clear;
+busybox echo " Menghapus seluruh isi direktori. "
+rm -rf /sdcard/Reborn/dat/*
+busybox echo ""
+sleep 2
+busybox echo ""
+busybox echo -n " Pergi kembali ke menu?
+[ Ya = 1 | Tidak = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+	busybox echo ""
+	busybox echo " Keluar dari menu. "
+	busybox sleep 1
+	exit
+else
+	busybox echo ""
+  menu_awal
+	busybox sleep 1
+fi
+busybox clear ;;
+
+3) busybox clear;
+cd /sdcard/Reborn/dat
+PATH="$PATH:/sdcard/Reborn/dat" su;
+busybox clear;;
+
+
+*) busybox clear;
+busybox echo "Keluar. Menu yang anda pilih salah. "
+busybox sleep 1
+esac
+busybox echo ""
+sleep 2
+R
+exit

@@ -1,0 +1,52 @@
+{
+  "localId": "758e2059-193c-4681-9fda-d8d328186a9b",
+  "onlineId": null,
+  "assemblyId": null,
+  "productId": null,
+  "hash": "947e8ac1cb95cbffab8b25f7ffd85b618d2efeb9",
+  "platform": 1,
+  "size": 291356,
+  "updatedTime": 0,
+  "version": "1.0",
+  "authors": {
+    "fallback": "MDB"
+  },
+  "designers": {
+    "fallback": "MDB"
+  },
+  "titles": {
+    "fallback": "Proxima Soft"
+  },
+  "descriptions": {},
+  "builtInThumbnails": {
+    "fallback": [
+      "preview_fonts_small_0.png",
+      "preview_fonts_big_0.png"
+    ]
+  },
+  "builtInPreviews": {
+    "fallback": [
+      "preview_fonts_big_0.png"
+    ]
+  },
+  "thumbnails": [],
+  "previews": [],
+  "parentResources": [
+    {
+      "localId": "d0108890-008b-4133-8609-8e259105467a",
+      "resourceCode": "theme",
+      "extraMeta": {},
+      "metaPath": null,
+      "contentPath": null
+    }
+  ],
+  "subResources": [],
+  "extraMeta": {},
+  "metaPath": null,
+  "contentPath": null,
+  "rightsPath": null,
+  "screenRatio": null,
+  "supportHomeSearchBar": false,
+  "packageVersion": null,
+  "iconsCount": null
+}

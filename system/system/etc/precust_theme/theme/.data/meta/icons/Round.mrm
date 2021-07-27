@@ -1,0 +1,49 @@
+{
+"localId": "Round",
+"onlineId": null,
+"assemblyId": null,
+"productId": null,
+"hash": "d84a081519d7578fa23ed96f8120cb6507df940e",
+"platform": 8,
+"size": 2081774,
+"updatedTime": 0,
+"version": "1.0",
+"authors": {
+"fallback": "Masik"
+},
+"designers": {
+"fallback": "Masik"
+},
+"titles": {
+"fallback": "Round"
+},
+"descriptions": {
+"fallback": "Masik X Round Icons"
+},
+"builtInThumbnails": {
+"fallback": [
+"RoundSmall.png"
+]
+},
+"builtInPreviews": {
+"fallback": [
+"Round.png"
+]
+},
+"thumbnails": [],
+"previews": [],
+"parentResources": [
+{
+"localId": "Round",
+"resourceCode": "theme",
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null
+}
+],
+"subResources": [],
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null,
+"rightsPath": null
+}

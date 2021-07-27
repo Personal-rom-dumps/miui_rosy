@@ -1,0 +1,175 @@
+#!/system/bin/sh
+
+start_scrot () {
+cd /data/Reborn;
+echo $g " meng Extrack system.img..."
+if [ -d /data/Reborn/AnGgIt86 ]; then
+    echo $g " memproses...";
+   else
+    mkdir AnGgIt86;
+    echo $g " membuat folder dan melanjutkan..."
+  fi;
+
+if [ -f /data/Reborn/system.img ]; then
+    echo $g " System.img ditemukan, melanjutkan proses..";
+    echo $g " Mount img to system...";
+    losetup /dev/block/loop3 system.img;
+    mount -t ext4 /dev/block/loop3 AnGgIt86;
+    echo $g " Mengekstrak files...";
+    cp -rfp AnGgIt86 system;
+    losetup -d /dev/block/loop3;
+    umount /dev/block/loop3;
+    echo $g " Selesai... ";
+    echo $g " Hasil ekstrakan ada di folder /data/Reborn/system...";
+else
+    echo $g " Dibatalkan , tidak ada system.img..";
+    
+fi;
+
+if [ -f /data/Reborn/system.img ]; then
+    rm -rf system.img;
+  else
+  echo $g " " ;
+fi;
+}
+
+start_vcrot () {
+cd /data/Reborn;
+echo $g " meng Extrack vendor.img..."
+if [ -d /data/Reborn/AnGgIt86 ]; then
+    echo $g " memproses...";
+   else
+    mkdir AnGgIt86;
+    echo $g " membuat folder dan melanjutkan..."
+  fi;
+
+if [ -f /data/Reborn/vendor.img ]; then
+    echo $g " vendor.img ditemukan, melanjutkan proses..";
+    echo $g " Mount img to vendor...";
+    losetup /dev/block/loop3 vendor.img;
+    mount -t ext4 /dev/block/loop3 AnGgIt86;
+    echo $g " Mengekstrak files...";
+    cp -rfp AnGgIt86 vendor;
+    losetup -d /dev/block/loop3;
+    umount /dev/block/loop3;
+    echo $g " Selesai... ";
+    echo $g " Hasil ekstrakan ada di folder /data/Reborn/vendor...";
+else
+    echo $g " Dibatalkan , tidak ada vendor.img..";
+    
+fi;
+
+if [ -f /data/Reborn/vendor.img ]; then
+    rm -rf vendor.img;
+  else
+  echo $g " " ;
+fi;
+}
+
+###########################
+if [ -d /data/Reborn ]; then
+   echo $g "";
+  else
+   mkdir -p /data/Reborn;
+fi;
+
+busybox clear
+busybox sleep 1
+busybox echo ""
+busybox echo -e " \e[01;31m ========  DANCOK IKI  ========"
+busybox echo ""
+busybox echo "________________________________________"
+busybox echo ""
+busybox echo " Petunjuk : copy file system / vendor.img "
+busybox echo "            ke folder data/Reborn."
+busybox echo ""
+busybox echo ""
+busybox echo "________________________________________"
+busybox echo ""
+busybox echo "1. Bongkar system.img"
+busybox echo "2. Bongkar vendor.img"
+busybox echo "3. Hapus semua"
+busybox echo "4. Keluar"
+busybox echo ""
+busybox echo -e " \e[01;31m ============== REBORN TEAM ============="
+busybox echo -n "Masukkan pilihan angka dan enter [1-4]:   "  
+read character
+case $character in 
+
+
+1) busybox clear;
+start_scrot
+busybox echo ""
+busybox echo -n " Pergi kembali ke menu?
+[ Ya = 1 | Tidak = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+	busybox echo ""
+	busybox echo " Keluar dari menu. "
+	busybox sleep 1
+	exit
+else
+	busybox echo ""
+  R
+	busybox sleep 1
+fi
+busybox clear ;;
+
+2) busybox clear;
+start_vcrot
+busybox echo ""
+busybox echo -n " Pergi kembali ke menu?
+[ Ya = 1 | Tidak = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+	busybox echo ""
+	busybox echo " Keluar dari menu. "
+	busybox sleep 1
+	exit
+else
+	busybox echo ""
+  R
+	busybox sleep 1
+fi
+busybox clear ;;
+
+R) busybox clear;
+R
+sleep 1
+busybox echo "";;
+
+3) busybox clear;
+busybox echo " Menghapus seluruh isi direktori. "
+rm -rf /data/Reborn/*
+busybox echo ""
+sleep 2
+busybox echo ""
+busybox echo -n " Pergi kembali ke menu?
+[ Ya = 1 | Tidak = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+	busybox echo ""
+	busybox echo " Keluar dari menu. "
+	busybox sleep 1
+	exit
+else
+	busybox echo ""
+  menu_awal
+	busybox sleep 1
+fi
+busybox clear ;;
+
+4) busybox clear;
+cd /data/Reborn
+PATH="$PATH:/data/Reborn" su;
+busybox clear;;
+
+
+*) busybox clear;
+busybox echo "Keluar. Menu yang anda pilih salah. "
+busybox sleep 1
+esac
+busybox echo ""
+sleep 2
+R
+exit

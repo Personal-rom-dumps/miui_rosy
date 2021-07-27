@@ -1,0 +1,141 @@
+#!/system/bin/sh
+
+e="\x1b[";c=$e"39;49;00m";y=$e"93;01m";cy=$e"96;01m";r=$e"1;91m";g=$e"92;01m";
+
+## 
+##menu awal
+
+menu_awal () {
+
+
+}
+
+###################
+busybox mount -o remount,rw -t auto /data >/dev/null 2>&1
+busybox mount -o remount,rw -t auto /system >/dev/null 2>&1
+busybox mount -o remount,rw -t auto / >/dev/null 2>&1
+mount -o remount,rw -t auto /data >/dev/null 2>&1
+mount -o remount,rw -t auto /system >/dev/null 2>&1
+mount -o remount,rw -t auto / >/dev/null 2>&1
+
+
+busybox clear
+
+echo ""
+echo $g"===================================================="
+echo "================== Reborn Tools  ==================="
+echo "===================================================="        
+echo $y"=       ____           _____           _      __   ="
+echo "=    /       \       /       \       /  \    /  |  ="
+echo "=    #######  |      #######  |      ### \   ## |  ="
+echo "=    ## |__## |      ## |__## |      #### \  ## |  =" 
+echo "=    ##    ## /      ##    ## /      ## ## \ ## |  ="
+echo "=    ###### _/       ######  \       ##  ##  ## |  =" 
+echo "=    ## ##  \        ## |__## |      ## | ## ## |  ="
+echo "=    ## | ## \   _   ##    ## |   _  ## |  #### |  ="
+echo "=    ##/   ##/  |_|  ###### _/   |_| ##/    ###/   ="
+echo $g"===================================================="
+echo "=================== - R.B.N - ======================"
+echo $g"===================================================="
+#echo "                                                    "
+#echo $r"____________________________________________________"
+echo "                                                    "
+echo $cy"         masukkan [R] untuk kembali ke menu         "
+echo $y"===================================================="
+echo "______________________Feature_______________________"
+echo "===================================================="
+echo ""
+echo $g"===================================================="
+echo $y"1.🔹Convert system.new.dat.br To system.img"
+echo $g"===================================================="
+echo $y"2.🔹Convert vendor.new.dat.br To vendor.img"
+echo $g"===================================================="
+echo $y"3.🔹Convert system.img To system.new.dat.br"
+echo $g"===================================================="
+echo $y"4.🔹Convert vendor.img To vendor.new.dat.br"
+echo $g"===================================================="
+echo $y"5.🔹Extract system / vendor.img"
+echo $g"===================================================="
+echo $y"6.🔹Backup File to img"
+echo $g"===================================================="
+echo $y"7.🔹Build Kernel Versi Reborn Team"
+echo $g"===================================================="
+echo $y"8.🔹Build Rom Reborn"
+echo $g"===================================================="
+echo $y"9.🔹Donasi"
+echo $g"===================================================="
+echo ""
+echo $cy"      masukkan [C] untuk melihat anunya REBORN     "
+echo ""
+echo $y"===================================================="
+echo "===================================================="
+echo $g"===================================================="
+echo "================     REBORN TEAM    ================"
+echo "===================================================="
+echo $y""
+echo -n "Masukkan pilihan dan enter [1-9]: "  
+read character
+case $character in 
+
+
+1) busybox clear;
+ssdat
+sleep 1
+busybox echo "";;
+
+2) busybox clear;
+vvdat
+sleep 1
+busybox echo "";;
+
+3) busybox clear;
+sbr
+sleep 1
+busybox echo "";;
+
+4) busybox clear;
+vbr
+sleep 1
+busybox echo "";;
+
+5) busybox clear;
+scrot
+sleep 1
+busybox echo "";;
+
+6) busybox clear;
+bawok
+sleep 1
+busybox echo "";;
+
+7) busybox clear;
+torok
+sleep 1
+busybox echo "";;
+
+8) busybox clear;
+torok
+sleep 1
+busybox echo "";;
+
+9) busybox clear;
+donat
+sleep 1
+busybox echo "";;
+
+R) busybox clear;
+R
+sleep 1
+busybox echo "";;
+
+C) busybox clear;
+contributor
+sleep 1
+busybox echo "";;
+
+
+*) busybox clear;
+echo -e "Pilihan Salah..Selamat tinggal.. "
+esac
+busybox echo ""
+exit

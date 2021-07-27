@@ -1,0 +1,49 @@
+{
+"localId": "Meego",
+"onlineId": null,
+"assemblyId": null,
+"productId": null,
+"hash": "3857bbc74d65a84c4ee4d4874f116543c1939ee7",
+"platform": 8,
+"size": 1297869,
+"updatedTime": 0,
+"version": "1.0",
+"authors": {
+"fallback": "Masik"
+},
+"designers": {
+"fallback": "Masik"
+},
+"titles": {
+"fallback": "Meego"
+},
+"descriptions": {
+"fallback": "Masik X Meego Icons"
+},
+"builtInThumbnails": {
+"fallback": [
+"MeegoSmall.png"
+]
+},
+"builtInPreviews": {
+"fallback": [
+"Meego.png"
+]
+},
+"thumbnails": [],
+"previews": [],
+"parentResources": [],
+"subResources": [
+{
+"localId": "Meego",
+"resourceCode": "icons",
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null
+}
+],
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null,
+"rightsPath": null
+}

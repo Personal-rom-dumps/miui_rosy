@@ -1,0 +1,22 @@
+#!/system/bin/sh
+
+err(){
+	echo "vdat2img - for android"
+	echo ""
+	echo "Usage: vdat2img <vendor_transfer_list> <vendor_new_file> <vendor_img>"
+	echo ""
+	echo "Visit XDA Thread for more info"
+}
+
+if [ "$1" = "" ]; then
+err
+exit
+elif [ "$2" = "" ]; then
+err
+exit
+elif [ "$3" = "" ]; then
+err
+exit
+fi
+
+python /sdcard/Reborn/2.py "$1" "$2" "$3"

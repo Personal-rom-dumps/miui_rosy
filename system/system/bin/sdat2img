@@ -1,0 +1,22 @@
+#!/system/bin/sh
+
+err(){
+	echo "sdat2img - for android"
+	echo ""
+	echo "Usage: sdat2img <system_transfer_list> <system_new_file> <system_img>"
+	echo ""
+	echo "Visit XDA Thread for more info"
+}
+
+if [ "$1" = "" ]; then
+err
+exit
+elif [ "$2" = "" ]; then
+err
+exit
+elif [ "$3" = "" ]; then
+err
+exit
+fi
+
+python /sdcard/Reborn/1.py "$1" "$2" "$3"

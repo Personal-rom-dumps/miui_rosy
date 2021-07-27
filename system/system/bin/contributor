@@ -1,0 +1,86 @@
+#!/system/bin/sh
+
+e="\x1b[";c=$e"39;49;00m";y=$e"93;01m";cy=$e"96;01m";r=$e"1;91m";g=$e"92;01m";
+
+## 
+##menu awal
+
+menu_awal () {
+
+
+}
+
+###################
+
+clear
+
+echo ""
+echo $g"===================================================="
+echo "================== Reborn Tools  ==================="
+echo "===================================================="        
+echo $y"=       ____           _____           _      __   ="
+echo "=    /       \       /       \       /  \    /  |  ="
+echo "=    #######  |      #######  |      ### \   ## |  ="
+echo "=    ## |__## |      ## |__## |      #### \  ## |  =" 
+echo "=    ##    ## /      ##    ## /      ## ## \ ## |  ="
+echo "=    ###### _/       ######  \       ##  ##  ## |  =" 
+echo "=    ## ##  \        ## |__## |      ## | ## ## |  ="
+echo "=    ## | ## \   _   ##    ## |   _  ## |  #### |  ="
+echo "=    ##/   ##/  |_|  ###### _/   |_| ##/    ###/   ="
+echo $g"===================================================="
+echo "=================== - R.B.N - ======================"
+echo $g"===================================================="
+echo "                                                    "
+#echo $cy"      masukkan [R] untuk kembali ke menu         "
+echo $y"===================================================="
+echo "___________________ CONTRIBUTORS ___________________"
+echo "===================================================="
+echo "===================================================="
+echo "= Contributors :                                   ="
+echo "=              * Xiaomi.eu                         ="
+echo "=              * Miuipro                           ="
+echo "=              * Termux                            ="
+echo "=              * Amaze                             ="
+echo "=              * Open jdk                          ="
+echo "=              * Pak Lek Dens Play                 ="
+echo "=              * Mbah vernan a.k.a didik adja      ="
+echo "=              * Mang joekerz_hxm                  ="
+echo "=              * Pak budi debrick                  ="
+echo "=              * Lek joko_semprul                  ="
+echo "=              * Pak Roman picisan                 ="
+echo "=              * Lek Anggit                        ="
+echo "=              * Pak PPaulana                      ="
+echo "=              * Lek ilham | vince                 ="
+echo "=              * Lek Novik | @Novik_14             ="
+echo "=              * Ua tere | @Watereancient          ="
+echo "=              * what's news                       ="
+echo "=              * Reborn Team                       ="
+echo "=              * Gerimis chanel                    ="
+echo "=              * Redmi Note 5 indonesia            ="
+echo "=              * Redmi Note 5 Pro(Whyred) official ="
+echo "=              * Kang Diskus                       ="
+echo "=              * ANU BARENG                        ="
+echo "=              * Anumu Mblegedes                   ="
+echo "=              * Dll. Pegel nulis asem             ="
+echo "===================================================="
+echo "===================================================="
+#echo "===================================================="
+
+echo $y""
+echo -n "Enter R to back menu \n"  
+read character
+case $character in 
+
+
+R) busybox clear;
+R
+sleep 1
+busybox echo "";;
+
+
+*) busybox clear;
+echo -e "Back to Menu "
+esac
+busybox echo ""
+R
+exit

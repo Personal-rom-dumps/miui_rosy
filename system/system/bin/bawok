@@ -1,0 +1,260 @@
+#!/system/bin/sh
+
+#Intuisy Project
+#Shell Variable
+
+Reborn=/sdcard/Reborn/Backup
+ZPXE=/sdcard/ZPX/IMEI
+
+# find boot image partition if not set already
+# borrow from SuperSu
+find_boot() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$block" ]; then
+    for PARTITION in kern-a KERN-A android_boot ANDROID_BOOT kernel KERNEL boot BOOT lnx LNX; do
+      block=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$block" ]; then break; fi
+    done
+  fi
+}
+
+# find recovery image partition if not set already
+# borrow from SuperSu
+find_reco() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$reco" ]; then
+    for PARTITION in recovery RECOVERY; do
+      reco=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$reco" ]; then break; fi
+    done
+  fi
+}
+
+# find systen image partition if not set already
+# borrow from SuperSu
+find_sys() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$sys" ]; then
+    for PARTITION in system SYSTEM; do
+      sys=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$sys" ]; then break; fi
+    done
+  fi
+}
+
+# find cust / vendor image partition if not set already
+# borrow from SuperSu
+find_cust() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$cust" ]; then
+    for PARTITION in cust CUST; do
+      cust=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$cust" ]; then break; fi
+    done
+  fi
+}
+
+# find vendor image partition if not set already
+# borrow from SuperSu
+find_vendor() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$vendor" ]; then
+    for PARTITION in vendor VENDOR; do
+      vendor=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$vendor" ]; then break; fi
+    done
+  fi
+}
+
+# find persist image partition if not set already
+# borrow from SuperSu
+find_persist() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$persist" ]; then
+    for PARTITION in persist PERSIST; do
+      persist=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$persist" ]; then break; fi
+    done
+  fi
+}
+
+# find persist image partition if not set already
+# borrow from SuperSu
+find_modem() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$modem" ]; then
+    for PARTITION in modem MODEM; do
+      modem=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$modem" ]; then break; fi
+    done
+  fi
+}
+
+find_imei() {
+  # expand the detection if we find more, instead of reading from fstab, because unroot
+  # from the SuperSU APK doesn't have the fstab to read from
+  if [ -z "$imei1" ]; then
+    for PARTITION in modemst1 MODEMST1; do
+      imei1=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$imei1" ]; then break; fi
+    done
+  fi
+  
+if [ -z "$imei2" ]; then
+    for PARTITION in modemst2 MODEMST2; do
+      imei2=$(readlink /dev/block/by-name/$PARTITION || readlink /dev/block/platform/*/by-name/$PARTITION || readlink /dev/block/platform/*/*/by-name/$PARTITION || readlink /dev/block/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/by-name/$PARTITION$SLOT_SUFFIX || readlink /dev/block/platform/*/*/by-name/$PARTITION$SLOT_SUFFIX)
+      if [ ! -z "$imei2" ]; then break; fi
+    done
+  fi
+}
+
+echo ""
+echo "===================================================="        
+echo $y"=       ____           _____           _      __   ="
+echo "=    /       \       /       \       /  \    /  |  ="
+echo "=    #######  |      #######  |      ### \   ## |  ="
+echo "=    ## |__## |      ## |__## |      #### \  ## |  =" 
+echo "=    ##    ## /      ##    ## /      ## ## \ ## |  ="
+echo "=    ###### _/       ######  \       ##  ##  ## |  =" 
+echo "=    ## ##  \        ## |__## |      ## | ## ## |  ="
+echo "=    ## | ## \   _   ##    ## |   _  ## |  #### |  ="
+echo "=    ##/   ##/  |_|  ###### _/   |_| ##/    ###/   ="
+echo $g"===================================================="
+echo $cy"         masukkan [R] untuk kembali ke menu         "
+echo $y"===================================================="
+echo "______________________Feature_______________________"
+echo $g"===================================================="
+echo " 1.🔹Cadangkan Kernel/Boot "
+echo $g"===================================================="
+echo " 2.🔹Cadangkan Recovery "
+echo $g"===================================================="
+echo " 3.🔹Backup System "
+echo $g"===================================================="
+echo " 4.🔹Backup Cust / Vendor For User msm89xx "
+echo $g"===================================================="
+echo " 5.🔹Backup Vendor For User sdm + "
+echo $g"===================================================="
+echo " 6.🔹Backup Persist "
+echo $g"===================================================="
+echo " 7.🔹Backup EFS imei "
+echo $g"===================================================="
+echo " 8.🔹Backup Modem "
+echo $g"===================================================="
+echo ""
+echo " 🏆🏆 Hasil Backup Tersimpan Di sdcard/Reborn/Backup 🏆🏆 "
+echo ""
+echo -n "Masukkan pilihan dan enter [1-8]: "  
+read character
+case $character in 
+
+1) clear;
+find_boot;
+echo " Boot Partisi terdeteksi : $block " 
+echo " Mohon Tunggu..... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=$block of=$Reborn/boot.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+2) clear;
+find_reco;
+echo " Recovery Partisi Terdeteksi : $reco "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$reco of=$Reborn/recovery.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+3) clear;
+find_sys
+echo " System Partisi Terdeteksi : $sys "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$sys of=$Reborn/system.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+4) clear;
+find_cust
+echo " Cust / Vendor Partisi Terdeteksi : $cust "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$cust of=$Reborn/cust.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+5) clear;
+find_vendor
+echo " Vendor Partisi Terdeteksi : $vendor "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$vendor of=$Reborn/vendor.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+6) clear;
+find_persist
+echo " Persist Partisi Terdeteksi : $persist "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$persist of=$Reborn/persist.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+7) clear;
+find_imei;
+echo " EFS Partisi Terdeteksi : $imei1 "
+echo "                          $imei2 "
+echo ""
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$imei1 of=$Reborn/modemst1.img
+dd if=/$imei2 of=$Reborn/modemst2.img
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+8) clear;
+find_modem
+echo " Modem Partisi Terdeteksi : $modem "
+echo " Mohon Tunggu ... "
+test ! -d "$Reborn" && mkdir -p "$Reborn";
+dd if=/$modem of=$Reborn/NON-HLOS.bin
+echo ""
+sleep 2
+echo "Pencadangan selesai, file tersimpan di $Reborn"
+echo "";;
+
+R) busybox clear;
+R
+sleep 1
+busybox echo "";;
+
+*) clear;
+echo " Pilihan anda salah, silahkan ulangi "
+sleep 1
+esac
+echo ""
+sleep 2
+bawok
+exit

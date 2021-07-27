@@ -1,0 +1,49 @@
+{
+"localId": "Funny",
+"onlineId": null,
+"assemblyId": null,
+"productId": null,
+"hash": "3857bbc75d55a84c4ee4d487ef116543c1939ee7",
+"platform": 8,
+"size": 1297869,
+"updatedTime": 0,
+"version": "1.0",
+"authors": {
+"fallback": "Masik"
+},
+"designers": {
+"fallback": "Masik"
+},
+"titles": {
+"fallback": "Funny"
+},
+"descriptions": {
+"fallback": "Masik X Funny Icons"
+},
+"builtInThumbnails": {
+"fallback": [
+"FunnySmall.png"
+]
+},
+"builtInPreviews": {
+"fallback": [
+"Funny.png"
+]
+},
+"thumbnails": [],
+"previews": [],
+"parentResources": [],
+"subResources": [
+{
+"localId": "Funny",
+"resourceCode": "icons",
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null
+}
+],
+"extraMeta": {},
+"metaPath": null,
+"contentPath": null,
+"rightsPath": null
+}
