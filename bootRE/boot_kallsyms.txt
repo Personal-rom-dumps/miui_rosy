@@ -1,0 +1,23 @@
+[+] Kernel successfully decompressed in-memory (the offsets that follow will be given relative to the decompressed binary)
+[+] Kernel successfully decompressed in-memory (the offsets that follow will be given relative to the decompressed binary)
+[+] Version string: Linux version 3.18.140-pixelexperience-g69ba99d0-dirty (jenkins@pe-buildserver-srv2) (gcc version 4.9.x 20150123 (prerelease) (GCC) ) #1 SMP PREEMPT Wed Sep 16 21:04:40 UTC 2020
+[+] Guessed architecture: aarch64 successfully in 0.00 seconds
+Traceback (most recent call last):
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 200, in __init__
+    self.find_kallsyms_names_uncompressed()
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 567, in find_kallsyms_names_uncompressed
+    raise KallsymsNotFoundException('No embedded symbol table found in this kernel')
+__main__.KallsymsNotFoundException: No embedded symbol table found in this kernel
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 1117, in <module>
+    kallsyms = KallsymsFinder(obtain_raw_kernel_from_file(kernel_bin.read()), args.bit_size)
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 205, in __init__
+    raise first_error
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 193, in __init__
+    self.find_kallsyms_token_table()
+  File "/home/rasputinae267/dump/vmlinux-to-elf/vmlinux_to_elf/kallsyms_finder.py", line 421, in find_kallsyms_token_table
+    raise KallsymsNotFoundException('%d candidates for kallsyms_token_table in kernel image' % len(candidates_offsets))
+__main__.KallsymsNotFoundException: 0 candidates for kallsyms_token_table in kernel image

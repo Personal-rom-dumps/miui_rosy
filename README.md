@@ -1,0 +1,14 @@
+# rosy-user 10 QKQ1.191215.002 Port_by-Neverland release-keys
+- manufacturer: xiaomi
+- platform: msm8953
+- codename: rosy
+- flavor: rosy-user
+- release: 10
+- id: QKQ1.191215.002
+- incremental: Port_by-Neverland
+- tags: release-keys
+- fingerprint: xiaomi/vince/vince:7.1.2/N2G47H/V9.5.4.0.NEGMIFA:user/release-keys
+- is_ab: false
+- brand: Xiaomi
+- branch: rosy-user-10-QKQ1.191215.002-Port_by-Neverland-release-keys
+- repo: xiaomi_rosy_dump
